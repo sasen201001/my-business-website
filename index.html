@@ -5,696 +5,850 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Manu Garment| Quality Service</title>
-  <meta name="description" content="Professional services for your business in Sri Lanka. Contact us today.">
+  <title>MANU GARMENT | Modern Clothing in Sri Lanka</title>
+  <meta name="description" content="Discover modern everyday fashion at MANU GARMENT. Browse our collection and order through WhatsApp.">
+  <meta name="theme-color" content="#111111">
 
   <style>
-    /* 1. Basic settings */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-
+    /* MANU GARMENT - black and white design */
     :root {
       --black: #111111;
       --white: #ffffff;
-      --light: #f4f4f4;
-      --gray: #666666;
+      --cream: #f6f4f0;
+      --gray: #777777;
+      --line: #e7e5e1;
     }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html { scroll-behavior: smooth; }
 
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background: var(--white);
       color: var(--black);
+      background: var(--white);
       line-height: 1.6;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    a { color: inherit; text-decoration: none; }
+    button, input { font: inherit; }
+    button { cursor: pointer; }
+    img { display: block; width: 100%; object-fit: cover; }
 
     .container {
-      width: 90%;
-      max-width: 1150px;
+      width: min(1160px, 90%);
       margin: auto;
     }
 
-    .section {
-      padding: 80px 0;
-    }
-
-    .section-title {
-      text-align: center;
-      font-size: clamp(28px, 4vw, 42px);
-      margin-bottom: 12px;
-    }
-
-    .section-description {
-      text-align: center;
-      color: var(--gray);
-      max-width: 600px;
-      margin: 0 auto 40px;
-    }
-
-    .button {
-      display: inline-block;
-      padding: 13px 25px;
+    .announcement {
+      padding: 9px 15px;
       background: var(--black);
-      color: var(--white);
-      border: 2px solid var(--black);
-      border-radius: 5px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: 0.25s;
+      color: white;
+      text-align: center;
+      font-size: 12px;
+      letter-spacing: 1px;
     }
 
-    .button:hover {
-      background: var(--white);
-      color: var(--black);
-    }
-
-    /* 2. Navigation bar */
+    /* Header and navigation */
     header {
-      background: var(--white);
-      border-bottom: 1px solid #eeeeee;
       position: sticky;
       top: 0;
-      z-index: 100;
+      z-index: 10;
+      background: white;
+      border-bottom: 1px solid var(--line);
     }
 
     .navbar {
-      min-height: 75px;
+      min-height: 76px;
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
       gap: 20px;
     }
 
     .logo {
-      font-size: 23px;
-      font-weight: 800;
-      letter-spacing: -1px;
+      font-size: 25px;
+      font-weight: 900;
+      letter-spacing: -1.2px;
+      white-space: nowrap;
     }
 
-    .logo span {
-      color: #777777;
-    }
+    .logo span { color: #888888; }
 
     .nav-links {
       display: flex;
-      gap: 25px;
       align-items: center;
+      gap: 25px;
       list-style: none;
+      font-size: 14px;
     }
 
-    .nav-links a:hover {
-      text-decoration: underline;
-    }
+    .nav-links a:hover { text-decoration: underline; }
 
     .menu-toggle {
       display: none;
       background: none;
-      border: none;
-      font-size: 28px;
-      cursor: pointer;
+      border: 0;
+      font-size: 26px;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 22px;
+      background: var(--black);
+      color: white;
+      border: 1px solid var(--black);
+      font-size: 13px;
+      font-weight: bold;
+      transition: .2s;
+    }
+
+    .btn:hover {
+      background: white;
       color: var(--black);
     }
 
-    /* 3. Homepage hero section */
+    .btn-outline {
+      background: transparent;
+      color: var(--black);
+    }
+
+    /* Main hero */
     .hero {
-      min-height: 570px;
-      display: flex;
-      align-items: center;
-      background: linear-gradient(135deg, #ffffff 55%, #eeeeee 55%);
-    }
-
-    .hero-content {
-      max-width: 720px;
-      padding: 80px 0;
-    }
-
-    .eyebrow {
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      font-size: 13px;
-      font-weight: bold;
-      color: var(--gray);
-      margin-bottom: 18px;
-    }
-
-    .hero h1 {
-      font-size: clamp(38px, 7vw, 68px);
-      line-height: 1.12;
-      letter-spacing: -2px;
-      margin-bottom: 22px;
-    }
-
-    .hero p {
-      color: var(--gray);
-      font-size: 18px;
-      max-width: 570px;
-      margin-bottom: 30px;
-    }
-
-    /* 4. About section */
-    .about-grid {
+      min-height: 540px;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 50px;
-      align-items: center;
+      background: var(--cream);
     }
 
-    .about-art {
-      min-height: 320px;
-      background: var(--black);
-      color: var(--white);
+    .hero-copy {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      align-items: center;
-      padding: 30px;
-      text-align: center;
-      border-radius: 8px;
+      align-items: flex-start;
+      padding: 65px max(5vw, 25px);
     }
 
-    .about-art strong {
-      font-size: 42px;
-    }
-
-    .about-text h2 {
-      font-size: 35px;
-      margin-bottom: 18px;
-    }
-
-    .about-text p {
+    .eyebrow {
+      font-size: 11px;
+      font-weight: bold;
+      letter-spacing: 3px;
+      text-transform: uppercase;
       color: var(--gray);
       margin-bottom: 18px;
     }
 
-    /* 5. Services section */
-    .services {
-      background: var(--light);
+    h1 {
+      font-size: clamp(42px, 5.5vw, 72px);
+      line-height: 1.04;
+      letter-spacing: -3px;
+      margin-bottom: 22px;
     }
 
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
+    .hero-copy p {
+      color: #555555;
+      max-width: 420px;
+      margin-bottom: 28px;
     }
 
-    .service-card {
-      background: var(--white);
-      border: 1px solid #e5e5e5;
-      padding: 30px;
-      border-radius: 8px;
-      transition: transform 0.25s;
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
     }
 
-    .service-card:hover {
-      transform: translateY(-5px);
+    .hero-image {
+      min-height: 420px;
+      background: #dedbd5;
+      overflow: hidden;
     }
 
-    .service-icon {
-      width: 50px;
-      height: 50px;
-      background: var(--black);
-      color: var(--white);
-      display: grid;
-      place-items: center;
-      border-radius: 8px;
-      font-size: 24px;
-      margin-bottom: 20px;
+    .hero-image img {
+      height: 100%;
+      min-height: 540px;
+      object-position: center;
     }
 
-    .service-card h3 {
-      margin-bottom: 12px;
-      font-size: 21px;
+    /* Reusable section styles */
+    .section { padding: 78px 0; }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 20px;
+      margin-bottom: 32px;
     }
 
-    .service-card p {
+    .section-head h2 {
+      font-size: clamp(30px, 4vw, 42px);
+      letter-spacing: -1.5px;
+      line-height: 1.15;
+    }
+
+    .section-head p {
       color: var(--gray);
+      max-width: 390px;
+      font-size: 14px;
     }
 
-    /* 6. Gallery section */
-    .gallery-grid {
+    /* Category tiles */
+    .categories {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 18px;
     }
 
-    .gallery-item {
-      min-height: 220px;
-      background: #eeeeee;
-      border: 1px solid #dddddd;
-      border-radius: 8px;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding: 22px;
-      transition: 0.25s;
+    .category {
+      position: relative;
+      min-height: 280px;
+      background: var(--cream);
+      overflow: hidden;
     }
 
-    .gallery-item:nth-child(2) {
-      background: #222222;
+    .category img {
+      height: 320px;
+      transition: transform .4s;
+    }
+
+    .category:hover img { transform: scale(1.04); }
+
+    .category-label {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 40px 20px 20px;
+      color: white;
+      background: linear-gradient(transparent, #000b);
+    }
+
+    .category-label h3 { font-size: 24px; }
+    .category-label span { font-size: 12px; }
+
+    /* Product cards */
+    .products-section { background: #faf9f7; }
+
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-bottom: 25px;
+    }
+
+    .filter-btn {
+      padding: 9px 17px;
+      border: 1px solid #cccccc;
+      background: white;
+      font-size: 12px;
+    }
+
+    .filter-btn.active,
+    .filter-btn:hover {
+      background: var(--black);
+      color: white;
+      border-color: var(--black);
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .product-card { min-width: 0; }
+
+    .product-image {
+      position: relative;
+      background: #ebe8e2;
+      overflow: hidden;
+    }
+
+    .product-image img {
+      aspect-ratio: 3 / 4;
+      transition: transform .35s;
+    }
+
+    .product-card:hover .product-image img {
+      transform: scale(1.035);
+    }
+
+    .tag {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: white;
+      padding: 5px 8px;
+      font-size: 10px;
+      font-weight: bold;
+    }
+
+    .product-info { padding: 13px 0; }
+
+    .product-info h3 {
+      font-size: 15px;
+      margin-bottom: 4px;
+    }
+
+    .product-info p {
+      color: var(--gray);
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
+
+    .price {
+      font-size: 15px;
+      font-weight: bold;
+      margin-bottom: 12px;
+    }
+
+    .order-btn {
+      width: 100%;
+      padding: 11px 7px;
+      background: white;
+      border: 1px solid var(--black);
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .order-btn:hover {
+      background: var(--black);
       color: white;
     }
 
-    .gallery-item:nth-child(3) {
-      background: #d9d9d9;
+    /* Brand story */
+    .story {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 55px;
     }
 
-    .gallery-item:hover {
-      transform: scale(1.02);
+    .story img {
+      height: 390px;
+      background: var(--cream);
     }
 
-    .gallery-item span {
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      margin-bottom: 5px;
+    .story h2 {
+      font-size: clamp(32px, 4vw, 45px);
+      line-height: 1.12;
+      margin-bottom: 20px;
     }
 
-    .gallery-item h3 {
-      font-size: 23px;
+    .story p {
+      color: var(--gray);
+      margin-bottom: 16px;
     }
 
-    /* 7. Contact section */
-    .contact {
+    /* Benefits */
+    .benefits {
       background: var(--black);
-      color: var(--white);
+      color: white;
     }
 
-    .contact .section-description {
-      color: #cccccc;
+    .benefit-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      text-align: center;
     }
 
+    .benefit-grid h3 { margin: 10px 0; }
+    .benefit-grid p { color: #cccccc; font-size: 13px; }
+    .benefit-icon { font-size: 28px; }
+
+    /* Contact and footer */
     .contact-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 45px;
+      gap: 40px;
     }
 
-    .contact-info h3 {
-      font-size: 25px;
-      margin-bottom: 18px;
-    }
-
-    .contact-info p {
-      color: #cccccc;
+    .contact-grid h2 {
+      font-size: 35px;
       margin-bottom: 15px;
     }
 
+    .contact-grid p {
+      color: var(--gray);
+      margin-bottom: 12px;
+    }
+
+    .contact-details { margin-top: 24px; }
+
     .contact-form {
       display: grid;
-      gap: 15px;
+      gap: 12px;
+      align-content: start;
     }
 
     .contact-form input,
     .contact-form textarea {
       width: 100%;
       padding: 14px;
-      border: 1px solid #777777;
-      border-radius: 5px;
-      background: #222222;
-      color: white;
-      font: inherit;
+      border: 1px solid #d5d5d5;
+      background: white;
+      color: var(--black);
+      border-radius: 0;
     }
 
     .contact-form textarea {
-      min-height: 130px;
+      min-height: 110px;
       resize: vertical;
     }
 
-    .contact-form input:focus,
-    .contact-form textarea:focus {
-      outline: 2px solid white;
-      outline-offset: 2px;
-    }
-
-    .contact-form .button {
-      background: white;
-      color: black;
-      border-color: white;
-    }
-
-    .contact-form .button:hover {
-      background: #cccccc;
-    }
-
-    /* 8. Footer */
     footer {
-      background: #080808;
-      color: #cccccc;
-      padding: 25px 0;
-      text-align: center;
-      font-size: 14px;
+      background: var(--black);
+      color: white;
+      padding: 30px 0;
     }
 
-    /* 9. Floating WhatsApp button */
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    footer p { color: #cccccc; font-size: 12px; }
+
     .whatsapp {
       position: fixed;
-      bottom: 22px;
-      right: 22px;
-      z-index: 90;
-      background: #25D366;
-      color: #111111;
-      padding: 13px 18px;
+      bottom: 20px;
+      right: 20px;
+      z-index: 9;
       border-radius: 30px;
+      padding: 13px 17px;
+      background: #25d366;
+      color: #111111;
+      font-size: 13px;
       font-weight: bold;
-      box-shadow: 0 4px 15px #0003;
+      box-shadow: 0 4px 16px #0002;
     }
 
-    .whatsapp:hover {
-      background: #1fba59;
-    }
-
-    /* 10. Mobile responsive design */
-    @media (max-width: 768px) {
-      .section {
-        padding: 60px 0;
-      }
-
-      .menu-toggle {
-        display: block;
-      }
+    /* Mobile layout */
+    @media (max-width: 800px) {
+      .menu-toggle { display: block; }
 
       .nav-links {
         display: none;
         position: absolute;
-        top: 75px;
+        top: 76px;
         left: 0;
         width: 100%;
-        background: white;
         padding: 22px 5%;
+        background: white;
+        border-bottom: 1px solid var(--line);
         flex-direction: column;
         align-items: flex-start;
-        border-bottom: 1px solid #eeeeee;
+        gap: 18px;
       }
 
-      .nav-links.active {
-        display: flex;
+      .nav-links.open { display: flex; }
+
+      .hero { grid-template-columns: 1fr; }
+
+      .hero-copy { padding: 60px 5%; }
+
+      .hero-image img {
+        min-height: 0;
+        height: 360px;
       }
 
-      .hero {
-        min-height: auto;
-        background: linear-gradient(160deg, white 70%, #eeeeee 70%);
-      }
+      .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 
-      .hero h1 {
-        letter-spacing: -1px;
-      }
+      .categories { grid-template-columns: 1fr; }
 
-      .about-grid,
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
+      .category img { height: 300px; }
 
-      .card-grid,
-      .gallery-grid {
-        grid-template-columns: 1fr;
-      }
+      .story,
+      .contact-grid { grid-template-columns: 1fr; }
 
-      .about-art {
-        min-height: 240px;
-      }
+      .story img { height: 300px; }
 
-      .whatsapp {
-        bottom: 14px;
-        right: 14px;
+      .section { padding: 55px 0; }
+
+      .section-head {
+        align-items: flex-start;
+        flex-direction: column;
       }
+    }
+
+    @media (max-width: 450px) {
+      .logo { font-size: 21px; }
+      .product-grid { gap: 12px; }
+      .product-info h3 { font-size: 13px; }
+      .benefit-grid { grid-template-columns: 1fr; }
+      h1 { letter-spacing: -1.5px; }
     }
   </style>
 </head>
 
 <body>
+  <!-- Change this announcement if needed -->
+  <div class="announcement">
+    MANU GARMENT — EVERYDAY STYLE, MADE SIMPLE
+  </div>
 
-  <!-- NAVIGATION -->
   <header>
     <nav class="navbar container">
-      <!-- Change your business name here -->
-      <a href="#home" class="logo">MANU<span> GARMENT.</span></a>
+      <a href="#home" class="logo">MANU <span>GARMENT.</span></a>
 
       <button class="menu-toggle" id="menuToggle"
-        aria-label="Open navigation menu"
-        aria-expanded="false">☰</button>
+        aria-label="Toggle menu" aria-expanded="false">☰</button>
 
       <ul class="nav-links" id="navLinks">
         <li><a href="#home">Home</a></li>
-        <li><a href="#about">About Us</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#categories">Collections</a></li>
+        <li><a href="#shop">Shop</a></li>
+        <li><a href="#about">Our Story</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-    <!-- HOMEPAGE -->
+    <!-- HERO -->
     <section class="hero" id="home">
-      <div class="container hero-content">
-        <div class="eyebrow">Welcome to Lanka Studio</div>
-
-        <h1>We Help Your Business Grow.</h1>
-
+      <div class="hero-copy">
+        <div class="eyebrow">New season · New style</div>
+        <h1>Wear Your<br>Own Story.</h1>
         <p>
-          Professional, reliable and friendly services for your business.
-          We are here to help you achieve your goals.
+          Discover everyday fashion with a clean, modern look.
+          Find your next favourite outfit at MANU GARMENT.
         </p>
+        <div class="hero-actions">
+          <a href="#shop" class="btn">Shop Collection</a>
+          <a href="#about" class="btn btn-outline">Our Story</a>
+        </div>
+      </div>
 
-        <a href="#services" class="button">Explore Services</a>
-        <a href="#contact" class="button">Contact Us</a>
+      <div class="hero-image">
+        <img
+          src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1100&q=85"
+          alt="Modern fashion clothing collection"
+          fetchpriority="high">
       </div>
     </section>
 
-    <!-- ABOUT US -->
-    <section class="section" id="about">
-      <div class="container about-grid">
-        <div class="about-art">
-          <strong>YOUR BRAND.</strong>
-          <p>Your success is our priority.</p>
+    <!-- CATEGORIES -->
+    <section class="section container" id="categories">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Find your style</div>
+          <h2>Explore Collections</h2>
         </div>
+        <p>Simple styles for different moods, moments and everyday life.</p>
+      </div>
 
-        <div class="about-text">
-          <div class="eyebrow">Who We Are</div>
-          <h2>About Our Business</h2>
+      <div class="categories">
+        <a href="#shop" class="category" data-category-link="Men">
+          <img src="https://images.unsplash.com/photo-1516257984-b1b4d707412e?auto=format&fit=crop&w=700&q=80"
+            alt="Men's fashion" loading="lazy">
+          <div class="category-label">
+            <h3>Men</h3><span>Explore collection ↗</span>
+          </div>
+        </a>
 
-          <p>
-            Welcome to Lanka Studio. We are a small business in Sri Lanka
-            committed to delivering quality service and building lasting
-            relationships with our customers.
-          </p>
+        <a href="#shop" class="category" data-category-link="Women">
+          <img src="https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?auto=format&fit=crop&w=700&q=80"
+            alt="Women's fashion" loading="lazy">
+          <div class="category-label">
+            <h3>Women</h3><span>Explore collection ↗</span>
+          </div>
+        </a>
 
-          <p>
-            Our goal is to provide dependable solutions, honest communication
-            and a great customer experience.
-          </p>
-
-          <a href="#contact" class="button">Get in Touch</a>
-        </div>
+        <a href="#shop" class="category" data-category-link="Casual">
+          <img src="https://images.unsplash.com/photo-1523398002811-999ca8dec234?auto=format&fit=crop&w=700&q=80"
+            alt="Casual clothing" loading="lazy">
+          <div class="category-label">
+            <h3>Casual Wear</h3><span>Explore collection ↗</span>
+          </div>
+        </a>
       </div>
     </section>
 
-    <!-- SERVICES -->
-    <section class="section services" id="services">
+    <!-- PRODUCTS: Replace sample products and prices below -->
+    <section class="section products-section" id="shop">
       <div class="container">
-        <h2 class="section-title">Our Services</h2>
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Curated for you</div>
+            <h2>Featured Products</h2>
+          </div>
+          <p>Browse our sample collection. Contact us to check availability and sizes.</p>
+        </div>
 
-        <p class="section-description">
-          Explore the services we offer to help you and your business.
-        </p>
+        <div class="filters" aria-label="Filter products">
+          <button class="filter-btn active" data-filter="All">All Items</button>
+          <button class="filter-btn" data-filter="Men">Men</button>
+          <button class="filter-btn" data-filter="Women">Women</button>
+          <button class="filter-btn" data-filter="Casual">Casual Wear</button>
+        </div>
 
-        <div class="card-grid">
-          <article class="service-card">
-            <div class="service-icon" aria-hidden="true">✦</div>
-            <h3>Service One</h3>
-            <p>
-              Describe your first service here. Explain how it helps your
-              customers and what makes it useful.
-            </p>
+        <div class="product-grid" id="productGrid">
+
+          <article class="product-card" data-category="Men">
+            <div class="product-image">
+              <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=600&q=80"
+                alt="Classic everyday T-shirt" loading="lazy">
+              <span class="tag">EVERYDAY</span>
+            </div>
+            <div class="product-info">
+              <h3>Classic T-Shirt</h3>
+              <p>Men · Sizes subject to availability</p>
+              <div class="price">LKR 2,500</div>
+              <button class="order-btn" data-product="Classic T-Shirt">Order on WhatsApp</button>
+            </div>
           </article>
 
-          <article class="service-card">
-            <div class="service-icon" aria-hidden="true">◆</div>
-            <h3>Service Two</h3>
-            <p>
-              Add details about your second service, including the value
-              and benefits customers can expect.
-            </p>
+          <article class="product-card" data-category="Women">
+            <div class="product-image">
+              <img src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&w=600&q=80"
+                alt="Women's casual fashion" loading="lazy">
+              <span class="tag">NEW STYLE</span>
+            </div>
+            <div class="product-info">
+              <h3>Casual Top</h3>
+              <p>Women · Sizes subject to availability</p>
+              <div class="price">LKR 3,200</div>
+              <button class="order-btn" data-product="Casual Top">Order on WhatsApp</button>
+            </div>
           </article>
 
-          <article class="service-card">
-            <div class="service-icon" aria-hidden="true">●</div>
-            <h3>Service Three</h3>
-            <p>
-              Explain your third service and invite visitors to contact you
-              for more information.
-            </p>
+          <article class="product-card" data-category="Casual">
+            <div class="product-image">
+              <img src="https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=600&q=80"
+                alt="Casual clothing on display" loading="lazy">
+              <span class="tag">CASUAL</span>
+            </div>
+            <div class="product-info">
+              <h3>Daily Wear</h3>
+              <p>Casual · Ask about available colours</p>
+              <div class="price">LKR 2,800</div>
+              <button class="order-btn" data-product="Daily Wear">Order on WhatsApp</button>
+            </div>
           </article>
+
+          <article class="product-card" data-category="Men">
+            <div class="product-image">
+              <img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?auto=format&fit=crop&w=600&q=80"
+                alt="Modern men's clothing" loading="lazy">
+              <span class="tag">POPULAR</span>
+            </div>
+            <div class="product-info">
+              <h3>Premium Tee</h3>
+              <p>Men · Ask about available colours</p>
+              <div class="price">LKR 3,500</div>
+              <button class="order-btn" data-product="Premium Tee">Order on WhatsApp</button>
+            </div>
+          </article>
+
         </div>
       </div>
     </section>
 
-    <!-- GALLERY -->
-    <section class="section" id="gallery">
-      <div class="container">
-        <h2 class="section-title">Our Work</h2>
+    <!-- ABOUT THE BRAND -->
+    <section class="section container" id="about">
+      <div class="story">
+        <img
+          src="https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=900&q=85"
+          alt="Clothing store and fashion collection" loading="lazy">
 
-        <p class="section-description">
-          A selection of our projects, products or completed work.
-        </p>
+        <div>
+          <div class="eyebrow">The MANU story</div>
+          <h2>Style That Feels Like You.</h2>
+          <p>
+            Welcome to MANU GARMENT. We believe clothing should help
+            you feel comfortable and express your personal style.
+          </p>
+          <p>
+            Our aim is to offer a friendly shopping experience and
+            carefully selected styles for everyday wear.
+          </p>
+          <a href="#contact" class="btn">Talk to Our Team</a>
+        </div>
+      </div>
+    </section>
 
-        <div class="gallery-grid">
-          <div class="gallery-item">
-            <span>Project 01</span>
-            <h3>Quality Work</h3>
-          </div>
-
-          <div class="gallery-item">
-            <span>Project 02</span>
-            <h3>Creative Ideas</h3>
-          </div>
-
-          <div class="gallery-item">
-            <span>Project 03</span>
-            <h3>Customer Care</h3>
-          </div>
+    <!-- SHOPPING BENEFITS -->
+    <section class="section benefits">
+      <div class="container benefit-grid">
+        <div>
+          <div class="benefit-icon">✦</div>
+          <h3>Selected Styles</h3>
+          <p>Discover pieces chosen to fit your everyday wardrobe.</p>
+        </div>
+        <div>
+          <div class="benefit-icon">♡</div>
+          <h3>Friendly Service</h3>
+          <p>Contact us to ask about sizes, colours and availability.</p>
+        </div>
+        <div>
+          <div class="benefit-icon">↗</div>
+          <h3>Easy Ordering</h3>
+          <p>Send your product enquiry directly through WhatsApp.</p>
         </div>
       </div>
     </section>
 
     <!-- CONTACT -->
-    <section class="section contact" id="contact">
-      <div class="container">
-        <h2 class="section-title">Let's Talk</h2>
+    <section class="section container" id="contact">
+      <div class="contact-grid">
+        <div>
+          <div class="eyebrow">We are here to help</div>
+          <h2>Let's Find Your Style.</h2>
+          <p>
+            Want to know about a product, size or delivery?
+            Send MANU GARMENT a message.
+          </p>
 
-        <p class="section-description">
-          Have a question or need our services? Send us a message.
-        </p>
-
-        <div class="contact-grid">
-          <div class="contact-info">
-            <h3>Contact Information</h3>
-
-            <!-- Replace these sample details -->
-            <p>📍 Location: Kurunagala, Sri Lanka</p>
-            <p>📞 Phone: +94 77 8180546</p>
-            <p>✉ Email: manugarment@gmail.com</p>
-
-            <p>
-              Business hours: Monday - Saturday
-            </p>
+          <!-- Replace with your real business details -->
+          <div class="contact-details">
+            <p><strong>Business:</strong> MANU GARMENT</p>
+            <p><strong>Location:</strong> Sri Lanka</p>
+            <p><strong>WhatsApp:</strong> Add your business number</p>
+            <p><strong>Opening hours:</strong> Update your hours here</p>
           </div>
 
-          <form class="contact-form" id="contactForm">
-            <input type="text" id="customerName"
-              placeholder="Your name" aria-label="Your name"
-              required>
-
-            <input type="email" id="customerEmail"
-              placeholder="Your email address"
-              aria-label="Your email address" required>
-
-            <textarea id="customerMessage"
-              placeholder="How can we help you?"
-              aria-label="Your message" required></textarea>
-
-            <button type="submit" class="button">
-              Send via WhatsApp
-            </button>
-          </form>
+          <a class="btn" id="contactWhatsApp" href="https://wa.me/94770000000"
+            target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
         </div>
+
+        <form class="contact-form" id="contactForm">
+          <input id="customerName" type="text" placeholder="Your name" required>
+          <input id="customerEmail" type="email" placeholder="Email address (optional)">
+          <textarea id="customerMessage" rows="4"
+            placeholder="What would you like to know?" required></textarea>
+          <button type="submit" class="btn">Send Enquiry via WhatsApp</button>
+        </form>
       </div>
     </section>
   </main>
 
-  <!-- FOOTER -->
   <footer>
-    <div class="container">
-      <p>
-        &copy; <span id="year"></span> Lanka Studio.
-        All rights reserved.
-      </p>
+    <div class="container footer-row">
+      <a class="logo" href="#home">MANU <span>GARMENT.</span></a>
+      <p>© <span id="year"></span> MANU GARMENT. All rights reserved.</p>
+      <a href="#home">Back to top ↑</a>
     </div>
   </footer>
 
-  <!-- WHATSAPP FLOATING BUTTON -->
-  <a class="whatsapp"
-    id="whatsappButton"
-    href="https://wa.me/94778180546"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Contact us on WhatsApp">
-    WhatsApp Us
-  </a>
+  <a href="https://wa.me/94770000000" class="whatsapp"
+    id="floatingWhatsApp" target="_blank"
+    rel="noopener noreferrer">WhatsApp Us ↗</a>
 
   <script>
-    // IMPORTANT:
-    // Replace this with your real WhatsApp number.
-    // Use country code + number, without +, spaces or dashes.
-    const WHATSAPP_NUMBER = "94778180546";
+    /*
+      IMPORTANT:
+      Replace this sample number with the real business WhatsApp number.
+      Use country code + number without +, spaces or dashes.
+      Example format: 94771234567
+    */
+    const WHATSAPP_NUMBER = "94770000000";
 
-    // Update the copyright year automatically.
+    // Update the copyright year.
     document.getElementById("year").textContent =
       new Date().getFullYear();
 
-    // Open and close the mobile navigation menu.
+    // Mobile navigation.
     const menuToggle = document.getElementById("menuToggle");
     const navLinks = document.getElementById("navLinks");
 
-    menuToggle.addEventListener("click", function () {
-      const isOpen = navLinks.classList.toggle("active");
-
-      menuToggle.setAttribute("aria-expanded", isOpen);
-      menuToggle.textContent = isOpen ? "✕" : "☰";
+    menuToggle.addEventListener("click", () => {
+      const open = navLinks.classList.toggle("open");
+      menuToggle.setAttribute("aria-expanded", String(open));
+      menuToggle.textContent = open ? "✕" : "☰";
     });
 
-    // Close the mobile menu after selecting a navigation link.
-    navLinks.querySelectorAll("a").forEach(function (link) {
-      link.addEventListener("click", function () {
-        navLinks.classList.remove("active");
+    navLinks.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
         menuToggle.setAttribute("aria-expanded", "false");
         menuToggle.textContent = "☰";
       });
     });
 
-    // Set the WhatsApp link using the number above.
-    const whatsappButton =
-      document.getElementById("whatsappButton");
+    // Create WhatsApp links from the configured number.
+    function makeWhatsAppLink(message) {
+      return "https://wa.me/" + WHATSAPP_NUMBER +
+        "?text=" + encodeURIComponent(message);
+    }
 
-    whatsappButton.href =
-      "https://wa.me/" + WHATSAPP_NUMBER;
+    document.getElementById("floatingWhatsApp").href =
+      makeWhatsAppLink("Hello MANU GARMENT! I would like to know more about your clothing collection.");
 
-    // The contact form opens WhatsApp with a prepared message.
-    // It does not store or email form submissions.
-    document.getElementById("contactForm")
-      .addEventListener("submit", function (event) {
-        event.preventDefault();
+    document.getElementById("contactWhatsApp").href =
+      makeWhatsAppLink("Hello MANU GARMENT! I have a question about your products.");
 
-        const name =
-          document.getElementById("customerName").value.trim();
+    // Filter products by category.
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const productCards = document.querySelectorAll(".product-card");
 
-        const email =
-          document.getElementById("customerEmail").value.trim();
-
-        const message =
-          document.getElementById("customerMessage").value.trim();
-
-        const text =
-          "Hello Lanka Studio!\n" +
-          "My name: " + name + "\n" +
-          "My email: " + email + "\n" +
-          "My message: " + message;
-
-        const url =
-          "https://wa.me/" + WHATSAPP_NUMBER +
-          "?text=" + encodeURIComponent(text);
-
-        window.open(url, "_blank", "noopener,noreferrer");
+    function filterProducts(category) {
+      productCards.forEach(card => {
+        card.hidden = category !== "All" &&
+          card.dataset.category !== category;
       });
-  </script>
 
+      filterButtons.forEach(button => {
+        const active = button.dataset.filter === category;
+        button.classList.toggle("active", active);
+        button.setAttribute("aria-pressed", String(active));
+      });
+    }
+
+    filterButtons.forEach(button => {
+      button.addEventListener("click", () => {
+        filterProducts(button.dataset.filter);
+      });
+    });
+
+    // Category tiles also filter the product list.
+    document.querySelectorAll("[data-category-link]").forEach(link => {
+      link.addEventListener("click", () => {
+        filterProducts(link.dataset.categoryLink);
+      });
+    });
+
+    // Product-specific WhatsApp enquiries.
+    document.querySelectorAll(".order-btn").forEach(button => {
+      button.addEventListener("click", () => {
+        const product = button.dataset.product;
+        const message =
+          "Hello MANU GARMENT! I am interested in: " + product +
+          ". Please confirm the available sizes, colours and price.";
+
+        window.open(makeWhatsAppLink(message), "_blank",
+          "noopener,noreferrer");
+      });
+    });
+
+    // Contact form prepares an enquiry in WhatsApp.
+    // This demo does not save data or send emails.
+    document.getElementById("contactForm").addEventListener("submit", event => {
+      event.preventDefault();
+
+      const name = document.getElementById("customerName").value.trim();
+      const email = document.getElementById("customerEmail").value.trim();
+      const message = document.getElementById("customerMessage").value.trim();
+
+      const text =
+        "Hello MANU GARMENT!\n" +
+        "Name: " + name + "\n" +
+        "Email: " + (email || "Not provided") + "\n" +
+        "Enquiry: " + message;
+
+      window.open(makeWhatsAppLink(text), "_blank", "noopener,noreferrer");
+    });
+  </script>
 </body>
 </html>
