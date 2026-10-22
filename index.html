@@ -1,0 +1,700 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Manu Garment| Quality Service</title>
+  <meta name="description" content="Professional services for your business in Sri Lanka. Contact us today.">
+
+  <style>
+    /* 1. Basic settings */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    :root {
+      --black: #111111;
+      --white: #ffffff;
+      --light: #f4f4f4;
+      --gray: #666666;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--white);
+      color: var(--black);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1150px;
+      margin: auto;
+    }
+
+    .section {
+      padding: 80px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: clamp(28px, 4vw, 42px);
+      margin-bottom: 12px;
+    }
+
+    .section-description {
+      text-align: center;
+      color: var(--gray);
+      max-width: 600px;
+      margin: 0 auto 40px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 13px 25px;
+      background: var(--black);
+      color: var(--white);
+      border: 2px solid var(--black);
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.25s;
+    }
+
+    .button:hover {
+      background: var(--white);
+      color: var(--black);
+    }
+
+    /* 2. Navigation bar */
+    header {
+      background: var(--white);
+      border-bottom: 1px solid #eeeeee;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .navbar {
+      min-height: 75px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 23px;
+      font-weight: 800;
+      letter-spacing: -1px;
+    }
+
+    .logo span {
+      color: #777777;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      align-items: center;
+      list-style: none;
+    }
+
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 28px;
+      cursor: pointer;
+      color: var(--black);
+    }
+
+    /* 3. Homepage hero section */
+    .hero {
+      min-height: 570px;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(135deg, #ffffff 55%, #eeeeee 55%);
+    }
+
+    .hero-content {
+      max-width: 720px;
+      padding: 80px 0;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 13px;
+      font-weight: bold;
+      color: var(--gray);
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-size: clamp(38px, 7vw, 68px);
+      line-height: 1.12;
+      letter-spacing: -2px;
+      margin-bottom: 22px;
+    }
+
+    .hero p {
+      color: var(--gray);
+      font-size: 18px;
+      max-width: 570px;
+      margin-bottom: 30px;
+    }
+
+    /* 4. About section */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .about-art {
+      min-height: 320px;
+      background: var(--black);
+      color: var(--white);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 30px;
+      text-align: center;
+      border-radius: 8px;
+    }
+
+    .about-art strong {
+      font-size: 42px;
+    }
+
+    .about-text h2 {
+      font-size: 35px;
+      margin-bottom: 18px;
+    }
+
+    .about-text p {
+      color: var(--gray);
+      margin-bottom: 18px;
+    }
+
+    /* 5. Services section */
+    .services {
+      background: var(--light);
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .service-card {
+      background: var(--white);
+      border: 1px solid #e5e5e5;
+      padding: 30px;
+      border-radius: 8px;
+      transition: transform 0.25s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .service-icon {
+      width: 50px;
+      height: 50px;
+      background: var(--black);
+      color: var(--white);
+      display: grid;
+      place-items: center;
+      border-radius: 8px;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .service-card h3 {
+      margin-bottom: 12px;
+      font-size: 21px;
+    }
+
+    .service-card p {
+      color: var(--gray);
+    }
+
+    /* 6. Gallery section */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .gallery-item {
+      min-height: 220px;
+      background: #eeeeee;
+      border: 1px solid #dddddd;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 22px;
+      transition: 0.25s;
+    }
+
+    .gallery-item:nth-child(2) {
+      background: #222222;
+      color: white;
+    }
+
+    .gallery-item:nth-child(3) {
+      background: #d9d9d9;
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.02);
+    }
+
+    .gallery-item span {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 5px;
+    }
+
+    .gallery-item h3 {
+      font-size: 23px;
+    }
+
+    /* 7. Contact section */
+    .contact {
+      background: var(--black);
+      color: var(--white);
+    }
+
+    .contact .section-description {
+      color: #cccccc;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 45px;
+    }
+
+    .contact-info h3 {
+      font-size: 25px;
+      margin-bottom: 18px;
+    }
+
+    .contact-info p {
+      color: #cccccc;
+      margin-bottom: 15px;
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 15px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 14px;
+      border: 1px solid #777777;
+      border-radius: 5px;
+      background: #222222;
+      color: white;
+      font: inherit;
+    }
+
+    .contact-form textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      outline: 2px solid white;
+      outline-offset: 2px;
+    }
+
+    .contact-form .button {
+      background: white;
+      color: black;
+      border-color: white;
+    }
+
+    .contact-form .button:hover {
+      background: #cccccc;
+    }
+
+    /* 8. Footer */
+    footer {
+      background: #080808;
+      color: #cccccc;
+      padding: 25px 0;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    /* 9. Floating WhatsApp button */
+    .whatsapp {
+      position: fixed;
+      bottom: 22px;
+      right: 22px;
+      z-index: 90;
+      background: #25D366;
+      color: #111111;
+      padding: 13px 18px;
+      border-radius: 30px;
+      font-weight: bold;
+      box-shadow: 0 4px 15px #0003;
+    }
+
+    .whatsapp:hover {
+      background: #1fba59;
+    }
+
+    /* 10. Mobile responsive design */
+    @media (max-width: 768px) {
+      .section {
+        padding: 60px 0;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 75px;
+        left: 0;
+        width: 100%;
+        background: white;
+        padding: 22px 5%;
+        flex-direction: column;
+        align-items: flex-start;
+        border-bottom: 1px solid #eeeeee;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .hero {
+        min-height: auto;
+        background: linear-gradient(160deg, white 70%, #eeeeee 70%);
+      }
+
+      .hero h1 {
+        letter-spacing: -1px;
+      }
+
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .card-grid,
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-art {
+        min-height: 240px;
+      }
+
+      .whatsapp {
+        bottom: 14px;
+        right: 14px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <header>
+    <nav class="navbar container">
+      <!-- Change your business name here -->
+      <a href="#home" class="logo">MANU<span> GARMENT.</span></a>
+
+      <button class="menu-toggle" id="menuToggle"
+        aria-label="Open navigation menu"
+        aria-expanded="false">☰</button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HOMEPAGE -->
+    <section class="hero" id="home">
+      <div class="container hero-content">
+        <div class="eyebrow">Welcome to Lanka Studio</div>
+
+        <h1>We Help Your Business Grow.</h1>
+
+        <p>
+          Professional, reliable and friendly services for your business.
+          We are here to help you achieve your goals.
+        </p>
+
+        <a href="#services" class="button">Explore Services</a>
+        <a href="#contact" class="button">Contact Us</a>
+      </div>
+    </section>
+
+    <!-- ABOUT US -->
+    <section class="section" id="about">
+      <div class="container about-grid">
+        <div class="about-art">
+          <strong>YOUR BRAND.</strong>
+          <p>Your success is our priority.</p>
+        </div>
+
+        <div class="about-text">
+          <div class="eyebrow">Who We Are</div>
+          <h2>About Our Business</h2>
+
+          <p>
+            Welcome to Lanka Studio. We are a small business in Sri Lanka
+            committed to delivering quality service and building lasting
+            relationships with our customers.
+          </p>
+
+          <p>
+            Our goal is to provide dependable solutions, honest communication
+            and a great customer experience.
+          </p>
+
+          <a href="#contact" class="button">Get in Touch</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section services" id="services">
+      <div class="container">
+        <h2 class="section-title">Our Services</h2>
+
+        <p class="section-description">
+          Explore the services we offer to help you and your business.
+        </p>
+
+        <div class="card-grid">
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">✦</div>
+            <h3>Service One</h3>
+            <p>
+              Describe your first service here. Explain how it helps your
+              customers and what makes it useful.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">◆</div>
+            <h3>Service Two</h3>
+            <p>
+              Add details about your second service, including the value
+              and benefits customers can expect.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">●</div>
+            <h3>Service Three</h3>
+            <p>
+              Explain your third service and invite visitors to contact you
+              for more information.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="section" id="gallery">
+      <div class="container">
+        <h2 class="section-title">Our Work</h2>
+
+        <p class="section-description">
+          A selection of our projects, products or completed work.
+        </p>
+
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <span>Project 01</span>
+            <h3>Quality Work</h3>
+          </div>
+
+          <div class="gallery-item">
+            <span>Project 02</span>
+            <h3>Creative Ideas</h3>
+          </div>
+
+          <div class="gallery-item">
+            <span>Project 03</span>
+            <h3>Customer Care</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section contact" id="contact">
+      <div class="container">
+        <h2 class="section-title">Let's Talk</h2>
+
+        <p class="section-description">
+          Have a question or need our services? Send us a message.
+        </p>
+
+        <div class="contact-grid">
+          <div class="contact-info">
+            <h3>Contact Information</h3>
+
+            <!-- Replace these sample details -->
+            <p>📍 Location: Kurunagala, Sri Lanka</p>
+            <p>📞 Phone: +94 77 8180546</p>
+            <p>✉ Email: manugarment@gmail.com</p>
+
+            <p>
+              Business hours: Monday - Saturday
+            </p>
+          </div>
+
+          <form class="contact-form" id="contactForm">
+            <input type="text" id="customerName"
+              placeholder="Your name" aria-label="Your name"
+              required>
+
+            <input type="email" id="customerEmail"
+              placeholder="Your email address"
+              aria-label="Your email address" required>
+
+            <textarea id="customerMessage"
+              placeholder="How can we help you?"
+              aria-label="Your message" required></textarea>
+
+            <button type="submit" class="button">
+              Send via WhatsApp
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>
+        &copy; <span id="year"></span> Lanka Studio.
+        All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <!-- WHATSAPP FLOATING BUTTON -->
+  <a class="whatsapp"
+    id="whatsappButton"
+    href="https://wa.me/94778180546"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Contact us on WhatsApp">
+    WhatsApp Us
+  </a>
+
+  <script>
+    // IMPORTANT:
+    // Replace this with your real WhatsApp number.
+    // Use country code + number, without +, spaces or dashes.
+    const WHATSAPP_NUMBER = "94778180546";
+
+    // Update the copyright year automatically.
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+    // Open and close the mobile navigation menu.
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", function () {
+      const isOpen = navLinks.classList.toggle("active");
+
+      menuToggle.setAttribute("aria-expanded", isOpen);
+      menuToggle.textContent = isOpen ? "✕" : "☰";
+    });
+
+    // Close the mobile menu after selecting a navigation link.
+    navLinks.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        navLinks.classList.remove("active");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.textContent = "☰";
+      });
+    });
+
+    // Set the WhatsApp link using the number above.
+    const whatsappButton =
+      document.getElementById("whatsappButton");
+
+    whatsappButton.href =
+      "https://wa.me/" + WHATSAPP_NUMBER;
+
+    // The contact form opens WhatsApp with a prepared message.
+    // It does not store or email form submissions.
+    document.getElementById("contactForm")
+      .addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const name =
+          document.getElementById("customerName").value.trim();
+
+        const email =
+          document.getElementById("customerEmail").value.trim();
+
+        const message =
+          document.getElementById("customerMessage").value.trim();
+
+        const text =
+          "Hello Lanka Studio!\n" +
+          "My name: " + name + "\n" +
+          "My email: " + email + "\n" +
+          "My message: " + message;
+
+        const url =
+          "https://wa.me/" + WHATSAPP_NUMBER +
+          "?text=" + encodeURIComponent(text);
+
+        window.open(url, "_blank", "noopener,noreferrer");
+      });
+  </script>
+
+</body>
+</html>
